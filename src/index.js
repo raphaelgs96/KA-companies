@@ -3,6 +3,7 @@ import "./database";
 import companiesRouter from "./routes/companies.routes"
 import employeesRouter from "./routes/employees.routes"
 
+require("dotenv").config()
 
 const app = express()
 app.use(express.json())
@@ -16,4 +17,5 @@ app.get("/", (_, response) => {
     })
 })
 
-app.listen(3000)
+const PORT = process.env.PORT || 3000 
+app.listen(PORT)
